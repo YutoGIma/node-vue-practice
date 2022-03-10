@@ -1,10 +1,17 @@
+const User = require('../models').Users
 
 exports.regist = (req,res) => {
-    console.log(req.body.name)
-    res.send("名前登録")
+    User.create({name:req.body.name})
+    .then(User=>{
+        console.log(User)
+        res.send("名前登録")
+    })
 }
 
 exports.find = (req,res)=>{
-    console.log(get)
-    res.send("success")
+    console.log("get")
+    User.findAll()
+    .then(users =>{
+        res.send(users)
+    })
 }
