@@ -23,7 +23,7 @@ app.post("/test",function(req,res){
     })
 })
 
-app.post("/input/regist",input.regist)
-app.get("/input/find",input.find)
+app.post("/input",input.regist)
+app.get("/input",input.find)
 
 app.listen(process.env.PORT || 3000)

@@ -32,11 +32,11 @@ export default ({
         inputRegist(){
             const postRegist={name:this.name}
             InputService.regist(postRegist)
-            .then(function(response){
+            .then((response)=>{
                 console.log(response)
             })
-            .then(function(error){
-                alert(error.response.data)
+            .catch((error)=>{
+                alert(error)
             })
         }
     }

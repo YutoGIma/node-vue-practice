@@ -9,7 +9,6 @@ exports.regist = (req,res) => {
 }
 
 exports.find = (req,res)=>{
-    console.log("get")
     User.findAll()
     .then(users =>{
         res.send(users)
