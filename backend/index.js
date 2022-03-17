@@ -25,5 +25,6 @@ app.post("/test",function(req,res){
 
 app.post("/input",input.regist)
 app.get("/input",input.find)
+app.put("/input/:id",input.change)
 
 app.listen(process.env.PORT || 3000)

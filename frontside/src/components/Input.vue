@@ -5,6 +5,8 @@
         <button type="submit" v-on:click="inputRegist()">送信</button>
         <div v-for="list in info" :key="list.id">
             <p>{{list.name}}</p>
+            <input type="text" v-model="list.name">
+            <button type="submit" v-on:click="inputChange(list)">変更</button>
         </div>
     </div>
 </template>
@@ -32,6 +34,15 @@ export default ({
         inputRegist(){
             const postRegist={name:this.name}
             InputService.regist(postRegist)
+            .then((response)=>{
+                console.log(response)
+            })
+            .catch((error)=>{
+                alert(error)
+            })
+        },
+        inputChange(list){
+            InputService.change(list)
             .then((response)=>{
                 console.log(response)
             })

@@ -14,3 +14,13 @@ exports.find = (req,res)=>{
         res.send(users)
     })
 }
+
+exports.change = (req,res)=>{
+    console.log(req.params.id)
+    User.update({
+        name:req.body.name
+    },
+    {where:{
+        id:req.params.id
+    }})
+}
