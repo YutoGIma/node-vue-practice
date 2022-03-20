@@ -7,6 +7,7 @@
             <p>{{list.name}}</p>
             <input type="text" v-model="list.name">
             <button type="submit" v-on:click="inputChange(list)">変更</button>
+            <button type="submit" v-on:click="inputDelete(list)">削除</button>
         </div>
     </div>
 </template>
@@ -43,6 +44,15 @@ export default ({
         },
         inputChange(list){
             InputService.change(list)
+            .then((response)=>{
+                console.log(response)
+            })
+            .catch((error)=>{
+                alert(error)
+            })
+        },
+        inputDelete(list){
+            InputService.delete(list.id)
             .then((response)=>{
                 console.log(response)
             })

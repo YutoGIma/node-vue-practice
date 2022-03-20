@@ -16,11 +16,20 @@ exports.find = (req,res)=>{
 }
 
 exports.change = (req,res)=>{
-    console.log(req.params.id)
     User.update({
         name:req.body.name
     },
     {where:{
         id:req.params.id
     }})
+    res.send("変更完了")
+}
+
+exports.delete = (req,res)=>{
+    User.destroy({
+        where:{
+            id:req.params.id
+        }
+    })
+    res.send("削除完了")
 }
