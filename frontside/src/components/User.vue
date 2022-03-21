@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import UserService from "../api/user"
 export default {
     data(){
         return{
@@ -17,7 +18,7 @@ export default {
     methods:{
         userRegist(){
             const postRegist={email:this.email,pass:this.password}
-            InputService.regist(postRegist)
+            UserService.regist(postRegist)
             .then((response)=>{
                 console.log(response)
             })

@@ -1,4 +1,5 @@
 const input = require("./controllers/input.controller")
+const user = require("./controllers/user.controller")
 const express = require("express")
 const bodyParser = require("body-parser")
 //corsポリシーに抵触するため、その対策としてcorsを利用する
@@ -27,5 +28,6 @@ app.post("/input",input.regist)
 app.get("/input",input.find)
 app.put("/input/:id",input.change)
 app.delete("/input/:id",input.delete)
+app.post("/user",user.regist)
 
 app.listen(process.env.PORT || 3000)
