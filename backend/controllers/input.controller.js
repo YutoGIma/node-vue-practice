@@ -1,7 +1,7 @@
 const User = require('../models').Users
 
 exports.regist = (req,res) => {
-    User.create({name:req.body.name})
+    User.create({email:req.body.email})
     .then(User=>{
         console.log(User)
         res.send("名前登録")
@@ -17,7 +17,7 @@ exports.find = (req,res)=>{
 
 exports.change = (req,res)=>{
     User.update({
-        name:req.body.name
+        email:req.body.email
     },
     {where:{
         id:req.params.id

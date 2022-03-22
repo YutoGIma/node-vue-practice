@@ -1,4 +1,20 @@
+const User = require('../models').Users
+
 exports.regist = (req,res)=>{
     console.log(req.body)
-    res.send(req.body)
+    User.findOne({
+        where:{
+            email:req.body.email
+        }
+    })
+    .then(User=>{
+        console.log(User)
+        if(User==null){
+            res.send("ユーザーが見つかりません。")
+        }else if(User.password == req.body.pass){
+            res.send("ログイン成功")
+        }else{
+            res.send("ログインしっぱi")
+        }
+    })
 }

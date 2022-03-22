@@ -1,11 +1,11 @@
 <template>
     <div id="inputUser">
         <h1>入力フォーム</h1>
-        <input type="text" v-model="name">
+        <input type="text" v-model="email">
         <button type="submit" v-on:click="inputRegist()">送信</button>
         <div v-for="list in info" :key="list.id">
-            <p>{{list.name}}</p>
-            <input type="text" v-model="list.name">
+            <p>{{list.email}}</p>
+            <input type="text" v-model="list.email">
             <button type="submit" v-on:click="inputChange(list)">変更</button>
             <button type="submit" v-on:click="inputDelete(list)">削除</button>
         </div>
@@ -18,7 +18,7 @@ export default ({
     data(){
         return{
             info:[],
-            name:null,
+            email:null,
         }
     },
     mounted(){
@@ -33,7 +33,7 @@ export default ({
     },
     methods:{
         inputRegist(){
-            const postRegist={name:this.name}
+            const postRegist={email:this.email}
             InputService.regist(postRegist)
             .then((response)=>{
                 console.log(response)
