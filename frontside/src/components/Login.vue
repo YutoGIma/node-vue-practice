@@ -19,7 +19,7 @@ export default {
             const postData={email:this.email,pass:this.password}
             LoginService.login(postData)
             .then((response)=>{
-                console.log(response)
+                localStorage.setItem("user",JSON.stringify(response.data))
             })
             .catch((error)=>{
                 alert(error)

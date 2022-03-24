@@ -12,7 +12,8 @@ exports.userLogin = (req,res)=>{
         if(User==null){
             res.send("ユーザーが見つかりません。")
         }else if(User.password == req.body.pass){
-            res.send("ログイン成功")
+            User.password =null
+            res.send(User)
         }else{
             res.send("ログイン失敗")
         }
