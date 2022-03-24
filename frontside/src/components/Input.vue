@@ -1,7 +1,8 @@
 <template>
     <div id="inputUser">
-        <h1>入力フォーム</h1>
+        <h1>利用者情報</h1>
         <input type="text" v-model="email">
+        <input type="text" v-model="password">
         <button type="submit" v-on:click="inputRegist()">送信</button>
         <div v-for="list in info" :key="list.id">
             <p>{{list.email}}</p>

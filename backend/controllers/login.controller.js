@@ -1,6 +1,6 @@
 const User = require('../models').Users
 
-exports.regist = (req,res)=>{
+exports.userLogin = (req,res)=>{
     console.log(req.body)
     User.findOne({
         where:{
@@ -14,7 +14,7 @@ exports.regist = (req,res)=>{
         }else if(User.password == req.body.pass){
             res.send("ログイン成功")
         }else{
-            res.send("ログインしっぱi")
+            res.send("ログイン失敗")
         }
     })
 }

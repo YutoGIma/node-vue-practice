@@ -1,5 +1,5 @@
 const input = require("./controllers/input.controller")
-const user = require("./controllers/user.controller")
+const login = require("./controllers/login.controller")
 const express = require("express")
 const bodyParser = require("body-parser")
 //corsポリシーに抵触するため、その対策としてcorsを利用する
@@ -16,18 +16,10 @@ app.get("/test",function(req,res){
     })
 })
 
-app.post("/test",function(req,res){
-    console.log(req.body)
-    console.log("post::"+req.body.name)
-    res.send({
-        message:req.body.name
-    })
-})
-
 app.post("/input",input.regist)
 app.get("/input",input.find)
 app.put("/input/:id",input.change)
 app.delete("/input/:id",input.delete)
-app.post("/user",user.regist)
+app.post("/login",login.userLogin)
 
 app.listen(process.env.PORT || 3000)

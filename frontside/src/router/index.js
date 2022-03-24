@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Input from '../components/Input'
-import User from '../components/User'
+import User from '../components/Login'
 
 Vue.use(Router)
 
@@ -19,8 +19,8 @@ export default new Router({
       component:Input
     },
     {
-      path: "/user",
-      name:"User",
+      path: "/login",
+      name:"Login",
       component:User
     }
   ]

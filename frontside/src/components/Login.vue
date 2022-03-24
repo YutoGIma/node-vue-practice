@@ -1,24 +1,23 @@
 <template>
     <div>
-        <h1>利用者登録</h1>
+        <h1>ログイン</h1>
         <input type="text" v-model="email">
         <input type="text" v-model="password">
-        <button type="submit" v-on:click="userRegist()">送信</button>
+        <button type="submit" v-on:click="login()">送信</button>
     </div>
 </template>
 
 <script>
-import UserService from "../api/user"
+import LoginService from "../api/login"
 export default {
     data(){
         return{
-
         }
     },
     methods:{
-        userRegist(){
-            const postRegist={email:this.email,pass:this.password}
-            UserService.regist(postRegist)
+        login(){
+            const postData={email:this.email,pass:this.password}
+            LoginService.login(postData)
             .then((response)=>{
                 console.log(response)
             })
