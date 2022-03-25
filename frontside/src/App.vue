@@ -6,7 +6,17 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  mounted(){ 
+    this.checkLogin()
+  },
+  methods:{
+    checkLogin(){
+      console.log("loginCheck")
+      let loginInfo = localStorage.getItem("user")
+      console.log(loginInfo)
+    }
+  }
 }
 </script>
 
