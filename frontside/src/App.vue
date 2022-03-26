@@ -15,6 +15,9 @@ export default {
       console.log("loginCheck")
       let loginInfo = localStorage.getItem("user")
       console.log(loginInfo)
+      if(loginInfo == null){
+        this.$router.push("/")
+      }
     }
   }
 }
