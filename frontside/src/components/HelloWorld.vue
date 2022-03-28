@@ -32,7 +32,18 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-a {
-  color: #42b983;
+a{
+  text-decoration: none;
+}
+button{
+  width:240px;
+  padding:3px 10px;
+  display: block;
+  margin:0 auto;
+  border-radius:30px;
+  color:#fff;
+  background-color:blueviolet;
+  border:none;
+  font-size:18px;
 }
 </style>

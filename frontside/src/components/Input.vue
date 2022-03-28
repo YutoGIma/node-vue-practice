@@ -10,6 +10,7 @@
             <button type="submit" v-on:click="inputChange(list)">変更</button>
             <button type="submit" v-on:click="inputDelete(list)">削除</button>
         </div>
+        <button v-on:click="logout()">ログアウト</button>
     </div>
 </template>
 
@@ -60,6 +61,10 @@ export default ({
             .catch((error)=>{
                 alert(error)
             })
+        },
+        logout(){
+            localStorage.removeItem("user")
+            this.$router.push("/")
         }
     }
 })
