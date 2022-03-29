@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Input from '../components/Input'
 import User from '../components/Login'
+import Many from '../components/ManyInput'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: "/login",
       name:"Login",
       component:User
-    }
+    },
+    {
+      path:"/many",
+      name:"Many",
+      component:Many
+    },
   ]
 })
