@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
+    "vee-validate": "^4.5.8",
     "vue": "^2.6.14",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
