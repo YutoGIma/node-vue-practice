@@ -5,6 +5,8 @@
         <form v-for="word in words" :key="word.id">
             <p>{{word.id}}</p>
             <input type="text" v-model="word.name">
+            <p v-if="showNameError" >{{nameError}}</p>
+            <p>{{showNameError}}</p>
         </form>
         <button type="button" @click="addInput()">像か</button>
         <button type="button" @click="manyPush(words)">提出</button>
@@ -20,7 +22,19 @@ export default {
                 name:null,
             }],
             num:0,
-            message:"manyInput"
+            message:"manyInput",
+            nameError:"aaa",
+        }
+    },
+    computed: {
+        showNameError (){
+            console.log("yes")
+            console.log(this.words[0].name)
+            this.nameError = "名前を正しく入力してください"
+            this.showErrorName = true
+            if(this.words[0].name != ""){
+                return true
+            }
         }
     },
     mounted(){
