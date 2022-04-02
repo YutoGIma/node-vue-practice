@@ -5,8 +5,7 @@
         <form v-for="word in words" :key="word.id">
             <p>{{word.id}}</p>
             <input type="text" v-model="word.name">
-            <p v-if="showNameError" >{{nameError}}</p>
-            <p>{{showNameError}}</p>
+            <p v-if="showNameError(word.id)">{{nameError}}</p>
         </form>
         <button type="button" @click="addInput()">像か</button>
         <button type="button" @click="manyPush(words)">提出</button>
@@ -27,13 +26,24 @@ export default {
         }
     },
     computed: {
-        showNameError (){
-            console.log("yes")
-            console.log(this.words[0].name)
-            this.nameError = "名前を正しく入力してください"
-            this.showErrorName = true
-            if(this.words[0].name != ""){
-                return true
+        showNameError(){
+            return function (id){
+                console.log(this.words)
+                if(this.words[0].name == null){
+                    return false
+                }
+                let inputName = this.words[id].name
+                if(inputName == ""){
+                    console.log("notName")
+                    this.nameError = "名前を正しく入力してください"
+                    return true
+                }else if(inputName.length < 4){
+                    this.nameError = "4文字以上入力して下さい"
+                    return true
+                }else{
+                    console.log("nameOk")
+                    return false
+                }
             }
         }
     },
