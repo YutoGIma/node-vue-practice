@@ -22,26 +22,23 @@ export default {
             }],
             num:0,
             message:"manyInput",
-            nameError:"aaa",
+            nameError:"",
         }
     },
     computed: {
         showNameError(){
             return function (id){
-                console.log(this.words)
                 if(this.words[0].name == null){
                     return false
                 }
                 let inputName = this.words[id].name
                 if(inputName == ""){
-                    console.log("notName")
                     this.nameError = "名前を正しく入力してください"
                     return true
                 }else if(inputName.length < 4){
                     this.nameError = "4文字以上入力して下さい"
                     return true
                 }else{
-                    console.log("nameOk")
                     return false
                 }
             }
