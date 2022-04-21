@@ -7,7 +7,7 @@ import router from './router'
 
 Vue.config.productionTip = false
 
-Vue.user(Vuex)
+Vue.use(Vuex)
 
 /* eslint-disable no-new */
 new Vue({
